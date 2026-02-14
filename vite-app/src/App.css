@@ -5,12 +5,47 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Pacifico, cursive, Arial, sans-serif;
-  background: url('https://drive.google.com/uc?export=view&id=1Z-ojBEDkr6I5Dxyjsn4c0ARmJaYr6Vg4') center/cover no-repeat, linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  font-family: 'Lato', sans-serif;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
   color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  -webkit-scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but allow scrolling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #dc2626, #991b1b);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dc2626;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(220, 38, 38, 0.3);
+  color: #ffffff;
 }
 
 /* Hero Section */
@@ -20,8 +55,8 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://res.cloudinary.com/dhxi75eld/image/upload/v1765429220/Bouquet_guide_kmll9z.jpg') center/cover no-repeat;
   position: relative;
+  overflow: hidden;
 }
 
 .hero-content h1 {
@@ -32,39 +67,23 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: fadeInUp 1s ease;
 }
 
 .hero-content .subtitle {
   font-size: 1.5rem;
   color: #dc2626;
   margin-bottom: 2rem;
-  animation: fadeInUp 1s ease 0.2s both;
 }
 
 .hero-content .date {
   font-size: 1.2rem;
   opacity: 0.8;
-  animation: fadeInUp 1s ease 0.4s both;
 }
-
-/* Floating hearts animation */
-.heart {
-  position: absolute;
-  color: #dc2626;
-  font-size: 1.5rem;
-  animation: float 6s ease-in-out infinite;
-  opacity: 0.7;
-}
-
-.heart:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-.heart:nth-child(2) { top: 80%; right: 10%; animation-delay: 2s; }
-.heart:nth-child(3) { top: 50%; left: 5%; animation-delay: 4s; }
-.heart:nth-child(4) { top: 30%; right: 5%; animation-delay: 1s; }
 
 /* Sections */
 .section {
   padding: 5rem 2rem;
+  position: relative;
 }
 
 .section h2 {
@@ -75,15 +94,9 @@ body {
   position: relative;
 }
 
-.section h2::after {
-  content: '';
-  position: absolute;
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(45deg, #dc2626, #ffffff);
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
+/* Custom Font Classes */
+.font-great-vibes {
+  font-family: 'Great Vibes', cursive;
 }
 
 /* Animations */
@@ -99,8 +112,12 @@ body {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-20px); 
+  }
 }
 
 /* Scroll animations */
@@ -113,6 +130,18 @@ body {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Parallax Layer Base */
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  will-change: transform;
+}
+
+/* Floating Elements Base */
+.floating-elements-container {
+  z-index: 1;
 }
 
 /* Responsive */

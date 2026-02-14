@@ -5,35 +5,47 @@
 @tailwind utilities;
 
 :root {
-  font-family: Pacifico, cursive, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #0a0a0a;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+}
+
+/* Ensure html has smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  -webkit-scroll-behavior: smooth;
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #dc2626;
   text-decoration: inherit;
+  transition: color 0.3s ease;
 }
+
 a:hover {
-  color: #535bf2;
+  color: #fca5a5;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  display: block;
   min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  overflow-x: hidden;
 }
 
 h1 {
@@ -41,6 +53,11 @@ h1 {
   line-height: 1.1;
 }
 
+h2, h3, h4, h5, h6 {
+  font-family: 'Great Vibes', cursive;
+}
+
+/* Button styles */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -49,26 +66,84 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
+  color: #ffffff;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all 0.3s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+button:hover {
+  border-color: #dc2626;
+  background-color: #2a1a1a;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto #dc2626;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #dc2626, #991b1b);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dc2626;
+}
+
+/* Selection */
+::selection {
+  background: rgba(220, 38, 38, 0.4);
+  color: #ffffff;
+}
+
+/* Image rendering */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Will-change for smooth animations */
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Backdrop blur support */
+@supports (backdrop-filter: blur(10px)) {
+  .backdrop-blur {
+    backdrop-filter: blur(10px);
   }
-  a:hover {
-    color: #747bff;
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  .backdrop-blur {
+    background-color: rgba(0, 0, 0, 0.8);
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
