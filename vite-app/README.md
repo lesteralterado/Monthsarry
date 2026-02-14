@@ -19,3 +19,6 @@ If you are developing a production application, we recommend using TypeScript wi
 cd vite-app
 npm install
 npm run dev
+
+To Deploy to GitHub Pages:
+npm run deploy
