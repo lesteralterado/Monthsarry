@@ -14,7 +14,8 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.2rem;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -23,10 +24,11 @@ nav a {
   font-weight: 500;
   transition: color 0.3s ease;
   position: relative;
+  font-size: 0.95rem;
 }
 
 nav a:hover {
-  color: #dc2626;
+  color: #ff69b4;
 }
 
 nav a::after {
@@ -36,7 +38,7 @@ nav a::after {
   height: 2px;
   bottom: -5px;
   left: 50%;
-  background: #dc2626;
+  background: #ff69b4;
   transition: all 0.3s ease;
 }
 
@@ -111,6 +113,7 @@ nav a:hover::after {
   }
 
   nav a:hover {
-    background: rgba(220, 38, 38, 0.1);
+    background: rgba(255, 105, 180, 0.1);
+    color: #ff69b4;
   }
 }

@@ -36,6 +36,9 @@ const Navigation = () => {
         <li><a href="#gallery" onClick={(e) => { e.preventDefault(); scrollToSection('gallery'); }}>Gallery</a></li>
         <li><a href="#photo" onClick={(e) => { e.preventDefault(); scrollToSection('photo'); }}>Memory</a></li>
         <li><a href="#message" onClick={(e) => { e.preventDefault(); scrollToSection('message'); }}>Message</a></li>
+        <li><a href="#surprise" onClick={(e) => { e.preventDefault(); scrollToSection('surprise'); }}>Surprise!</a></li>
+        <li><a href="#game" onClick={(e) => { e.preventDefault(); scrollToSection('game'); }}>Play Game</a></li>
+        <li><a href="#secret" onClick={(e) => { e.preventDefault(); scrollToSection('secret'); }}>Secret</a></li>
       </ul>
     </nav>
   );

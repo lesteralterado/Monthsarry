@@ -5,6 +5,9 @@ import Story from './components/Story';
 import Gallery from './components/Gallery';
 import PhotoSection from './components/PhotoSection';
 import Message from './components/Message';
+import ClickableSurprise from './components/ClickableSurprise';
+import LoveGame from './components/LoveGame';
+import SecretReveal from './components/SecretReveal';
 import './App.css';
 
 function App() {
@@ -16,6 +19,9 @@ function App() {
       <Gallery />
       <PhotoSection />
       <Message />
+      <ClickableSurprise />
+      <LoveGame />
+      <SecretReveal />
     </>
   );
 }
