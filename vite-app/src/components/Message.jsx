@@ -59,9 +59,9 @@ const Message = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Fifteen months ago, you walked into my life and everything changed for the better.
-            You've brought so much joy, laughter, and love into my world. Every day with you
-            feels like a gift, and I'm grateful for every moment we've shared together.
+            Fifteen months ago, you stepped into my life and transformed it in ways I never imagined.
+            Your presence has filled my days with happiness, warmth, and endless love. Each moment spent
+            with you is a treasure I cherish deeply, and I'm thankful for every memory we've created.
           </motion.p>
           
           <motion.p 
