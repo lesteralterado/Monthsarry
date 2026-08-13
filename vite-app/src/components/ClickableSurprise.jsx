@@ -185,7 +185,7 @@ const ClickableSurprise = () => {
         .surprise-section {
           position: relative;
           min-height: 100vh;
-          background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+          background: #f7f2e9;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -200,13 +200,12 @@ const ClickableSurprise = () => {
 
         .surprise-title {
           font-size: 3rem;
-          color: #ff6b9d;
+          color: #d94e78;
           margin-bottom: 0.5rem;
-          text-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
         }
 
         .surprise-subtitle {
-          color: #a0a0c0;
+          color: #6b675e;
           font-size: 1.2rem;
           margin-bottom: 1rem;
         }
@@ -220,7 +219,7 @@ const ClickableSurprise = () => {
         }
 
         .score-label {
-          color: #a0a0c0;
+          color: #6b675e;
           font-size: 1rem;
         }
 

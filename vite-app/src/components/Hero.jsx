@@ -1,125 +1,124 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import BackgroundMusic from './BackgroundMusic';
 import './Hero.css';
-
-// Array of heart images for better maintainability and readability
-const hearts = [
-  'https://cdn-icons-png.flaticon.com/512/833/833472.png',
-  'https://res.cloudinary.com/dhxi75eld/image/upload/v1765423719/cdb125c2-6b03-460e-a933-1249f13ccdce_kk94fv.jpg',
-  'https://cdn-icons-png.flaticon.com/512/833/833473.png',
-  'https://cdn-icons-png.flaticon.com/512/833/833472.png'
-];
 
 const Hero = () => {
   const heroRef = useRef(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ['start start', 'end start']
   });
 
   // Parallax transforms
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-  const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const heart1Y = useTransform(scrollYProgress, [0, 1], ['0%', '-150%']);
-  const heart2Y = useTransform(scrollYProgress, [0, 1], ['0%', '-80%']);
-  const heart3Y = useTransform(scrollYProgress, [0, 1], ['0%', '-120%']);
-  const heart4Y = useTransform(scrollYProgress, [0, 1], ['0%', '-60%']);
+  const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '60%']);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const mediaY = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <section id="home" className="hero" ref={heroRef}>
-      {/* Parallax Background */}
-      <motion.div 
-        className="hero-background"
-        style={{ y: backgroundY }}
-      />
+      <div className="hero-inner">
+        {/* Left: Copy */}
+        <motion.div
+          className="hero-copy"
+          style={{ y: contentY, opacity: contentOpacity }}
+        >
+          <motion.span
+            className="hero-eyebrow"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            Happy 21st Monthsarry & Valentine's Day
+          </motion.span>
 
-      {/* Floating Hearts with Parallax */}
-      <div className="hearts-container">
-        <motion.div 
-          className="heart heart-1"
-          style={{ y: heart1Y }}
-        >
-          <img src={hearts[0]} alt="heart" />
+          <motion.h1
+            className="hero-heading"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' }}
+          >
+            Let Us Celebrate <span className="font-great-vibes">21st</span> Months of Us
+          </motion.h1>
+
+          <motion.p
+            className="hero-sub"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.35, ease: 'easeOut' }}
+          >
+            A little archive of our favorite moments, inside jokes, and the love
+            that keeps growing — made just for you, my dear.
+          </motion.p>
+
+          <motion.div
+            className="hero-actions"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
+          >
+            <button className="btn-solid" onClick={() => scrollToSection('message')}>
+              Say Hello
+            </button>
+            <button className="btn-outline" onClick={() => scrollToSection('story')}>
+              <span className="play-icon">▶</span> See Our Story
+            </button>
+          </motion.div>
+
+          <motion.div
+            className="scroll-indicator"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
+            <motion.div
+              className="scroll-arrow"
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              ↓
+            </motion.div>
+          </motion.div>
         </motion.div>
-        
-        <motion.div 
-          className="heart heart-2"
-          style={{ y: heart2Y }}
+
+        {/* Right: Photos */}
+        <motion.div
+          className="hero-media"
+          style={{ y: mediaY }}
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
         >
-          <img src={hearts[1]} alt="heart" />
-        </motion.div>
-        
-        <motion.div 
-          className="heart heart-3"
-          style={{ y: heart3Y }}
-        >
-          <img src={hearts[2]} alt="heart" />
-        </motion.div>
-        
-        <motion.div 
-          className="heart heart-4"
-          style={{ y: heart4Y }}
-        >
-          <img src={hearts[3]} alt="heart" />
+          <div className="hero-media-primary">
+            <img
+              src="https://picsum.photos/seed/monthsarry-hero-1/700/900"
+              alt="Us, together"
+              loading="eager"
+            />
+          </div>
+          <div className="hero-media-secondary">
+            <img
+              src="https://picsum.photos/seed/monthsarry-hero-2/560/720"
+              alt="A favorite memory"
+              loading="eager"
+            />
+            <button className="hero-media-cta" onClick={() => scrollToSection('message')}>
+              Say Hello
+            </button>
+          </div>
         </motion.div>
       </div>
 
-      {/* Main Content */}
-      <motion.div 
-        className="hero-content"
-        style={{ y: contentY, opacity: contentOpacity }}
-      >
-        <motion.h1 
-          className="font-great-vibes"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
-        >
-          15 Months Together
-        </motion.h1>
-        
-        <motion.p 
-          className="subtitle"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
-        >
-          Happy 15th Monthsarry & Valentine's Day my Dear
-        </motion.p>
-        
-        <motion.p 
-          className="date"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8, ease: 'easeOut' }}
-        >
-          Our love story continues to bloom on this special day
-        </motion.p>
-        
-        {/* Scroll indicator */}
-        <motion.div 
-          className="scroll-indicator"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
-        >
-          <motion.div 
-            className="scroll-arrow"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            ↓
-          </motion.div>
-        </motion.div>
-      </motion.div>
-
-      {/* Background music */}
-      <audio autoPlay loop controls className="audio-player">
-        <source src="/assets/Taylor_Fortnight.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
+      {/* Background music (streamed from YouTube) */}
+      <BackgroundMusic videoId="q3zqJs7JUCQ" />
     </section>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
+import PhotoStrip from './components/PhotoStrip';
 import Story from './components/Story';
 import Gallery from './components/Gallery';
 import PhotoSection from './components/PhotoSection';
@@ -15,6 +16,7 @@ function App() {
     <>
       <Navigation />
       <Hero />
+      <PhotoStrip />
       <Story />
       <Gallery />
       <PhotoSection />

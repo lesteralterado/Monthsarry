@@ -48,14 +48,24 @@ const Story = () => {
         includeSparkles={true}
       />
 
-      <motion.h2 
-        className="font-great-vibes story-title"
+      <motion.span
+        className="story-eyebrow"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+      >
+        Our Love Story
+      </motion.span>
+
+      <motion.h2
+        className="story-title"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
       >
-        Our Love Story
+        From a simple hello<br />to fifteen months of love
       </motion.h2>
 
       <div className="timeline">
@@ -130,22 +140,36 @@ const Story = () => {
       </div>
 
       <style>{`
+        #story {
+          background: #f7f2e9;
+        }
+
         .story-background {
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, 
-            rgba(220, 38, 38, 0.05) 0%, 
-            rgba(0, 0, 0, 0) 50%,
-            rgba(220, 38, 38, 0.05) 100%
-          );
+          background: #f7f2e9;
           z-index: -1;
         }
-        
-        .story-title {
-          font-size: 3rem;
+
+        .story-eyebrow {
+          display: block;
           text-align: center;
-          margin-bottom: 3rem;
-          color: #dc2626;
+          font-size: 0.85rem;
+          font-weight: 600;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: #b3394c;
+          margin-bottom: 0.9rem;
+        }
+
+        .story-title {
+          font-family: 'Playfair Display', serif;
+          font-weight: 500;
+          font-size: 2.75rem;
+          line-height: 1.2;
+          text-align: center;
+          margin-bottom: 3.5rem;
+          color: #211f1b;
         }
 
         .timeline {
@@ -162,7 +186,7 @@ const Story = () => {
           transform: translateX(-50%);
           width: 2px;
           height: 100%;
-          background: linear-gradient(180deg, #dc2626, #991b1b, #dc2626);
+          background: linear-gradient(180deg, transparent, #b3394c, transparent);
         }
 
         .timeline-item {
@@ -184,32 +208,36 @@ const Story = () => {
           position: absolute;
           left: 50%;
           transform: translateX(-50%);
-          width: 16px;
-          height: 16px;
-          background: #dc2626;
+          width: 14px;
+          height: 14px;
+          background: #b3394c;
+          border: 3px solid #f7f2e9;
           border-radius: 50%;
-          box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+          box-shadow: 0 0 0 1px rgba(179, 57, 76, 0.35);
           z-index: 1;
         }
 
         .timeline-content {
           width: 45%;
-          padding: 1.5rem;
-          background: rgba(255, 255, 255, 0.05);
-          border-radius: 12px;
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(220, 38, 38, 0.2);
+          padding: 1.5rem 1.75rem;
+          background: #ffffff;
+          border-radius: 16px;
+          border: 1px solid rgba(33, 31, 27, 0.08);
+          box-shadow: 0 15px 35px -20px rgba(33, 31, 27, 0.25);
         }
 
         .timeline-content h3 {
-          color: #dc2626;
-          font-size: 1.3rem;
-          margin-bottom: 0.75rem;
+          font-family: 'Playfair Display', serif;
+          font-weight: 600;
+          color: #211f1b;
+          font-size: 1.25rem;
+          margin-bottom: 0.6rem;
         }
 
         .timeline-content p {
-          color: #e5e5e5;
+          color: #5a564c;
           line-height: 1.6;
+          font-size: 0.95rem;
         }
 
         .story-grid {
@@ -223,25 +251,27 @@ const Story = () => {
 
         .story-card {
           padding: 2rem;
-          background: rgba(255, 255, 255, 0.03);
-          border-radius: 16px;
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(220, 38, 38, 0.15);
-          transition: box-shadow 0.3s ease;
+          background: #ffffff;
+          border-radius: 18px;
+          border: 1px solid rgba(33, 31, 27, 0.08);
+          box-shadow: 0 15px 35px -22px rgba(33, 31, 27, 0.25);
+          transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
 
         .story-card:hover {
-          box-shadow: 0 20px 40px rgba(220, 38, 38, 0.1);
+          box-shadow: 0 25px 45px -20px rgba(33, 31, 27, 0.3);
         }
 
         .story-card h3 {
-          color: #dc2626;
-          font-size: 1.4rem;
+          font-family: 'Playfair Display', serif;
+          font-weight: 600;
+          color: #211f1b;
+          font-size: 1.35rem;
           margin-bottom: 1rem;
         }
 
         .story-card p {
-          color: #d4d4d4;
+          color: #5a564c;
           line-height: 1.7;
         }
 

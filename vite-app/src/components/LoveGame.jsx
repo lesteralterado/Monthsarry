@@ -256,7 +256,7 @@ const LoveGame = () => {
       <style>{`
         .game-section {
           min-height: 100vh;
-          background: linear-gradient(180deg, #0f0f23 0%, #1a1a3e 50%, #2d1b4e 100%);
+          background: #f7f2e9;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -272,8 +272,7 @@ const LoveGame = () => {
 
         .game-title {
           font-size: 3rem;
-          color: #ff69b4;
-          text-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+          color: #d94e78;
           margin-bottom: 1rem;
         }
 
@@ -291,12 +290,12 @@ const LoveGame = () => {
         }
 
         .stat-label {
-          color: #888;
+          color: #6b675e;
           font-size: 0.9rem;
         }
 
         .stat-value {
-          color: white;
+          color: #211f1b;
           font-size: 1.5rem;
           font-weight: bold;
         }
@@ -308,19 +307,19 @@ const LoveGame = () => {
         }
 
         .combo-text {
-          color: #ffd700;
+          color: #b8860b;
           font-size: 1.2rem;
           font-weight: bold;
-          text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
 
         .game-area {
           width: 100%;
           max-width: 600px;
           height: 70vh;
-          background: rgba(255, 255, 255, 0.05);
+          background: #ffffff;
           border-radius: 20px;
-          border: 2px solid rgba(255, 105, 180, 0.3);
+          border: 1px solid rgba(33, 31, 27, 0.08);
+          box-shadow: 0 25px 50px -30px rgba(33, 31, 27, 0.35);
           position: relative;
           overflow: hidden;
           cursor: none;
@@ -332,7 +331,7 @@ const LoveGame = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: rgba(15, 15, 35, 0.95);
+          background: rgba(247, 242, 233, 0.97);
         }
 
         .menu-content, .game-over-content {
@@ -346,13 +345,13 @@ const LoveGame = () => {
         }
 
         .menu-content h3 {
-          color: #ff69b4;
+          color: #d94e78;
           font-size: 1.8rem;
           margin-bottom: 0.5rem;
         }
 
         .menu-content p {
-          color: #aaa;
+          color: #6b675e;
           margin-bottom: 2rem;
         }
 
@@ -374,7 +373,7 @@ const LoveGame = () => {
         }
 
         .game-over h3 {
-          color: #ffd700;
+          color: #b8860b;
           font-size: 2rem;
           margin-bottom: 1rem;
         }
@@ -387,19 +386,18 @@ const LoveGame = () => {
         }
 
         .final-label {
-          color: #aaa;
+          color: #6b675e;
           font-size: 1rem;
         }
 
         .final-value {
-          color: #ff69b4;
+          color: #d94e78;
           font-size: 4rem;
           font-weight: bold;
-          text-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
         }
 
         .score-message {
-          color: #ccc;
+          color: #5a564c;
           font-size: 1.1rem;
           margin: 1rem 0;
         }
@@ -412,9 +410,9 @@ const LoveGame = () => {
         }
 
         .menu-button {
-          background: rgba(255, 255, 255, 0.1);
-          color: white;
-          border: 2px solid rgba(255, 255, 255, 0.3);
+          background: rgba(33, 31, 27, 0.05);
+          color: #211f1b;
+          border: 1px solid rgba(33, 31, 27, 0.2);
           padding: 1rem 2rem;
           font-size: 1.1rem;
           border-radius: 30px;
@@ -423,7 +421,7 @@ const LoveGame = () => {
         }
 
         .menu-button:hover {
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(33, 31, 27, 0.1);
         }
 
         .falling-heart {

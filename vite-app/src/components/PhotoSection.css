@@ -6,17 +6,17 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+  background: #f7f2e9;
 }
 
 /* Parallax Background */
 .photo-background {
   position: absolute;
   inset: 0;
-  background: 
-    radial-gradient(ellipse at 30% 20%, rgba(220, 38, 38, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 80%, rgba(220, 38, 38, 0.1) 0%, transparent 50%),
-    linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(179, 57, 76, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(179, 57, 76, 0.06) 0%, transparent 50%),
+    #f7f2e9;
   transform-origin: center bottom;
   z-index: 0;
 }
@@ -25,7 +25,7 @@
 .photo-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+  background: radial-gradient(circle at center, transparent 0%, rgba(33, 31, 27, 0.06) 100%);
   z-index: 1;
 }
 
@@ -43,7 +43,7 @@
   height: 24px;
   opacity: 0;
   animation: pulse-heart 3s ease-in-out infinite;
-  filter: drop-shadow(0 0 8px rgba(220, 38, 38, 0.6));
+  filter: drop-shadow(0 0 8px rgba(179, 57, 76, 0.5));
 }
 
 .photo-heart svg {
@@ -71,10 +71,11 @@
 }
 
 .photo-title {
+  font-family: 'Playfair Display', serif;
   font-size: 3.5rem;
-  font-weight: 300;
+  font-weight: 500;
   margin-bottom: 1rem;
-  background: linear-gradient(45deg, #ffffff, #dc2626, #ffffff);
+  background: linear-gradient(45deg, #211f1b, #b3394c, #211f1b);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -93,7 +94,7 @@
 
 .photo-subtitle {
   font-size: 1.5rem;
-  color: #fca5a5;
+  color: #8a3347;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
@@ -102,7 +103,7 @@
 .photo-line {
   width: 100px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #dc2626, transparent);
+  background: linear-gradient(90deg, transparent, #b3394c, transparent);
   margin: 2rem auto 0;
   transform-origin: center;
 }

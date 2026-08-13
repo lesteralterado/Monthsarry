@@ -225,7 +225,7 @@ const SecretReveal = () => {
       <style>{`
         .secret-section {
           min-height: 100vh;
-          background: linear-gradient(180deg, #1a0a2e 0%, #2d1b4e 50%, #1a0a2e 100%);
+          background: #f7f2e9;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -243,7 +243,7 @@ const SecretReveal = () => {
           height: 300px;
           border-radius: 50%;
           filter: blur(80px);
-          opacity: 0.3;
+          opacity: 0.18;
         }
 
         .secret-section::before {
@@ -266,12 +266,12 @@ const SecretReveal = () => {
         }
 
         .lock-container {
-          background: rgba(255, 255, 255, 0.05);
+          background: #ffffff;
           border-radius: 30px;
           padding: 3rem;
           text-align: center;
-          border: 2px solid rgba(255, 105, 180, 0.3);
-          backdrop-filter: blur(10px);
+          border: 1px solid rgba(33, 31, 27, 0.08);
+          box-shadow: 0 25px 50px -30px rgba(33, 31, 27, 0.35);
         }
 
         .lock-icon {
@@ -281,12 +281,12 @@ const SecretReveal = () => {
 
         .secret-title {
           font-size: 2.5rem;
-          color: #ff69b4;
+          color: #d94e78;
           margin-bottom: 1rem;
         }
 
         .secret-description {
-          color: #aaa;
+          color: #5a564c;
           margin-bottom: 2rem;
           line-height: 1.6;
         }
@@ -307,10 +307,10 @@ const SecretReveal = () => {
         .password-input {
           padding: 1rem 1.5rem;
           font-size: 1.1rem;
-          border: 2px solid rgba(255, 105, 180, 0.3);
+          border: 1px solid rgba(33, 31, 27, 0.15);
           border-radius: 30px;
-          background: rgba(255, 255, 255, 0.1);
-          color: white;
+          background: #f7f2e9;
+          color: #211f1b;
           width: 200px;
           outline: none;
           transition: border-color 0.3s;
@@ -321,7 +321,7 @@ const SecretReveal = () => {
         }
 
         .password-input::placeholder {
-          color: #888;
+          color: #8a857a;
         }
 
         .unlock-button {
@@ -341,7 +341,7 @@ const SecretReveal = () => {
         }
 
         .hint-message {
-          color: #ffd700;
+          color: #b8860b;
           font-size: 0.9rem;
           font-style: italic;
         }
@@ -370,9 +370,8 @@ const SecretReveal = () => {
 
         .unlocked-title {
           font-size: 2.5rem;
-          color: #ffd700;
+          color: #b8860b;
           margin-bottom: 2rem;
-          text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
         }
 
         .secret-messages {
@@ -383,14 +382,15 @@ const SecretReveal = () => {
         }
 
         .secret-message-card {
-          background: rgba(255, 255, 255, 0.08);
+          background: #ffffff;
           padding: 1.2rem 1.5rem;
           border-radius: 15px;
           display: flex;
           align-items: center;
           gap: 1rem;
           text-align: left;
-          border: 1px solid rgba(255, 105, 180, 0.2);
+          border: 1px solid rgba(33, 31, 27, 0.08);
+          box-shadow: 0 15px 35px -25px rgba(33, 31, 27, 0.3);
           cursor: pointer;
         }
 
@@ -399,16 +399,17 @@ const SecretReveal = () => {
         }
 
         .message-text {
-          color: #eee;
+          color: #3a3730;
           font-size: 1.1rem;
         }
 
         .love-letter {
-          background: rgba(255, 255, 255, 0.05);
+          background: #ffffff;
           border-radius: 20px;
           padding: 2rem;
           margin-bottom: 2rem;
-          border: 2px solid rgba(255, 105, 180, 0.3);
+          border: 1px solid rgba(33, 31, 27, 0.08);
+          box-shadow: 0 15px 35px -25px rgba(33, 31, 27, 0.3);
         }
 
         .love-letter h3 {
@@ -418,7 +419,7 @@ const SecretReveal = () => {
         }
 
         .letter-content {
-          color: #ddd;
+          color: #4a463e;
           text-align: left;
           line-height: 1.8;
           font-size: 1.05rem;
@@ -435,9 +436,9 @@ const SecretReveal = () => {
         }
 
         .lock-again-button {
-          background: rgba(255, 255, 255, 0.1);
-          color: #aaa;
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          background: transparent;
+          color: #6b675e;
+          border: 1px solid rgba(33, 31, 27, 0.2);
           padding: 0.8rem 1.5rem;
           border-radius: 20px;
           cursor: pointer;
@@ -445,8 +446,8 @@ const SecretReveal = () => {
         }
 
         .lock-again-button:hover {
-          background: rgba(255, 255, 255, 0.15);
-          color: white;
+          background: rgba(33, 31, 27, 0.06);
+          color: #211f1b;
         }
 
         @media (max-width: 768px) {

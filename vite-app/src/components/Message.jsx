@@ -127,15 +127,15 @@ const Message = () => {
           display: flex;
           align-items: center;
           justify-content: center;
+          background: #f7f2e9;
         }
 
         .message-background {
           position: absolute;
           inset: 0;
-          background: 
-            radial-gradient(ellipse at 20% 50%, rgba(220, 38, 38, 0.08) 0%, transparent 50%),
-            radial-gradient(ellipse at 80% 50%, rgba(220, 38, 38, 0.08) 0%, transparent 50%),
-            linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+          background:
+            radial-gradient(ellipse at 20% 50%, rgba(179, 57, 76, 0.06) 0%, transparent 50%),
+            radial-gradient(ellipse at 80% 50%, rgba(179, 57, 76, 0.06) 0%, transparent 50%);
           z-index: -1;
         }
 
@@ -149,29 +149,28 @@ const Message = () => {
 
         .message-title {
           font-size: 3rem;
-          color: #dc2626;
+          color: #b3394c;
           margin-bottom: 3rem;
         }
 
         .message-container {
-          background: rgba(255, 255, 255, 0.02);
+          background: #ffffff;
           border-radius: 20px;
           padding: 3rem;
-          border: 1px solid rgba(220, 38, 38, 0.15);
-          backdrop-filter: blur(10px);
-          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+          border: 1px solid rgba(33, 31, 27, 0.08);
+          box-shadow: 0 25px 50px -30px rgba(33, 31, 27, 0.35);
         }
 
         .message-text {
           font-size: 1.2rem;
           line-height: 2;
-          color: #e5e5e5;
+          color: #4a463e;
           margin-bottom: 1.5rem;
         }
 
         .message-signature {
           font-size: 1.5rem;
-          color: #dc2626;
+          color: #b3394c;
           margin-top: 2rem;
           font-style: italic;
         }

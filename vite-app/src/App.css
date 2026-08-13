@@ -48,49 +48,9 @@ html {
   color: #ffffff;
 }
 
-/* Hero Section */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-content h1 {
-  font-size: 4rem;
-  font-weight: 300;
-  margin-bottom: 1rem;
-  background: linear-gradient(45deg, #ffffff, #dc2626);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-content .subtitle {
-  font-size: 1.5rem;
-  color: #dc2626;
-  margin-bottom: 2rem;
-}
-
-.hero-content .date {
-  font-size: 1.2rem;
-  opacity: 0.8;
-}
-
 /* Sections */
 .section {
   padding: 5rem 2rem;
-  position: relative;
-}
-
-.section h2 {
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 3rem;
-  color: #dc2626;
   position: relative;
 }
 
@@ -146,34 +106,7 @@ html {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-content .subtitle {
-    font-size: 1.2rem;
-  }
-
-  .hero-content .date {
-    font-size: 1rem;
-  }
-
   .section {
     padding: 3rem 1rem;
-  }
-
-  .section h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  .section h2 {
-    font-size: 1.8rem;
   }
 }

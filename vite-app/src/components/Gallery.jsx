@@ -94,7 +94,7 @@ const Gallery = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.3 }}
                 >
-                    <CircularGallery items={galleryItems} />
+                    <CircularGallery items={galleryItems} textColor="#211f1b" />
                 </motion.div>
             </div>
 
@@ -102,28 +102,23 @@ const Gallery = () => {
                 .gallery-section {
                     position: relative;
                     overflow: hidden;
+                    background: #f7f2e9;
                 }
 
                 .gallery-background {
                     position: absolute;
                     inset: 0;
-                    background: linear-gradient(180deg, 
-                        rgba(0, 0, 0, 0.3) 0%, 
-                        rgba(220, 38, 38, 0.05) 30%,
-                        rgba(220, 38, 38, 0.05) 70%,
-                        rgba(0, 0, 0, 0.3) 100%
-                    );
                     z-index: -1;
                 }
 
                 .gallery-title {
-                    color: #dc2626;
+                    color: #b3394c;
                     font-size: 3rem;
                     margin-bottom: 3rem;
                 }
 
                 .gallery-subtitle {
-                    color: #fca5a5;
+                    color: #8a3347;
                 }
             `}</style>
         </section>
